@@ -1,0 +1,55 @@
+/* CSS Document */
+
+#loginformholder{
+	margin-top:10%;
+	width:30%;
+	margin-left:10%;
+	text-align:center;
+	font-family:Geneva, Arial, Helvetica, sans-serif;
+}  
+.con{
+font-size:25px;
+font-style:italic;
+}
+
+.cscon
+{
+	width:12%;
+	top:23%;
+	left:65%;
+	position:absolute;
+}
+.body{
+min-width:50%;
+}
+input[type=text], input[type=password]{
+	border-radius:3px;
+	padding:2px;
+}
+
+input[type=button]{
+	background-color:#66FFFF;
+	color:#000000;
+	height:30px;
+	border-radius:6px;
+}
+
+.headstyle{
+	color:#FFFF00;
+	font-size:24px;
+}
+
+.button {
+background-color:#FFFFFF;
+font:Verdana, Arial, Helvetica, sans-serif;
+color:#009900;
+  padding: 4px 12px;
+  text-align: center;
+  border-radius:15px;
+  border: 2px solid #4CAF50;
+  font-size: 30px;
+}
+.button:hover {
+  background-color: #4CAF50;
+  color: white;
+  }

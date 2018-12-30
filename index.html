@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Harsha Vardhan</title>
+<link rel="shortcut icon" href="hmlogo.jpg" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	  
+<style>
+
+body {
+  background-image:url(hacking-reloaded.jpg);
+  background-repeat:no-repeat;
+  background-size:cover;
+    }
+         .ui-widget-header,.ui-state-default, ui-button {
+            background: #009900;
+            border: 1px solid #DDDDDD;
+            color: #333333;
+			
+            font-weight: bold;
+         }
+		 .progress-label {
+            position: absolute;
+            left: 10%;
+            top: 13px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #fff;
+         }
+		 
+		 .blink {
+	-webkit-animation: blink .75s linear infinite;
+	-moz-animation: blink .75s linear infinite;
+	-ms-animation: blink .75s linear infinite;
+	-o-animation: blink .75s linear infinite;
+	 animation: blink .75s linear infinite;
+}
+@-webkit-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-o-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+    </style>
+<link href="cssforgame.css" rel="stylesheet" type="text/css" />
+
+<script>
+	window.alert("Welcome");
+  var x = document.getElementById("demo");
+    function getLocation()
+      {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+        else
+        { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+      }
+    function showPosition(position)
+      {
+        x.innerHTML = "Your Geographical Location is<br>Latitude: " + position.coords.latitude +
+          " degrees<br>Longitude: " + position.coords.longitude +" degrees";
+    }
+	function rtnname()
+	{
+		document.getElementById('nam').innerHTML = 
+                    document.getElementById("input").value;
+    }
+	$(function() {
+            var progressbar = $( "#progressbar-5" );
+            progressLabel = $( ".progress-label" );
+            $( "#progressbar-5" ).progressbar({
+               value: false,
+               change: function() {
+                  progressLabel.text( 
+                     progressbar.progressbar( "value" )  + "% "+"..."+"@MysteryX" );
+               },
+               complete: function() {
+                  progressLabel.text( "Loading Completed!" );
+               }
+            });
+            function progress() {
+			var d1=document.getElementById("nx");
+			var d2=document.getElementById("ny");
+			var d3=document.getElementById("nz");
+			var val = progressbar.progressbar( "value" ) || 0;
+               progressbar.progressbar( "value", val + 1 );
+			   if(val==99)
+			   {
+			   d3.innerHTML="Y E @ R";
+			   }
+			   if(val==30)
+			   {
+			   d1.innerHTML="!-! @ P P Y";
+			   }if(val==65)
+			   {
+			   d2.innerHTML="N E W";
+			   }			   
+               if ( val < 99 ) {
+                  setTimeout( progress, 100 );
+               }			   
+            }
+            setTimeout( progress, 3000 );
+         });		 
+		 $(function() {
+            $( "#dialog-4" ).dialog({
+				width:500,
+				height:500,
+               autoOpen: false, 
+               modal: true,
+			   hide: "puff",
+               show : "slide",
+               buttons: {
+                  OK: function() {$(this).dialog("close");}
+               },
+            });
+            $("#st").click(function() {
+			window.alert("Check out only after loading");
+               $( "#dialog-4" ).dialog( "open" );
+            });
+         });
+		 $(function() {
+            $( "#dialog-5" ).dialog({
+				width:700,
+				height:500,
+               autoOpen: false, 
+               modal: true,
+			   hide: "puff",
+               show : "slide",
+               buttons: {
+                  OK: function() {$(this).dialog("close");
+				  window.alert("Have a Great Year Ahead");
+				  }				  
+               },
+            });
+            $( "#opener-5" ).click(function() {			
+               $( "#dialog-5" ).dialog( "open" );
+            });
+         });
+		 document.getElementById("opener-5").addEventListener('click', function(){
+  if("vibrate" in navigator){
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+if (navigator.vibrate) {
+      navigator.vibrate([5000]);    
+}    
+}
+});
+</script>
+</head>
+
+<body class="body">
+
+
+<div id="loginformholder">
+	<table>
+	<tr>
+	<td style="color:#CCCCCC">Enter Your NaMe</td>
+	<form>
+	<td><input type="text" id="input"/></td>
+	</form>
+	</tr>
+	
+	<tr height="70px">
+	<td align="center" colspan="2" ><button class="button" onclick="rtnname()">SubMit</button> </td>
+	</tr>
+	
+	<tr>
+	<td align="right" style="color:#CCCCCC">Hello </td>
+	<td align="left" style="color:#CCCCCC"><p id="nam"></p></td>
+	</tr>
+	
+	<tr height="30px">
+	<td align="center" colspan="2" style="color:#CCCCCC">Let's have soMe fun with a gaMe</td>
+	</tr>
+	
+	<tr height="80px">
+	<td align="right"style="color:#CCCCCC" >Location Access</td>
+	<td align="center"><button class="button" onclick="getLocation()">Allow</button> </td>
+	</tr>
+	
+	<tr>
+	<td align="center" colspan="2" style="color:#CCCCCC"><p id="demo"></p></td>
+	</tr>
+	
+	<tr height="25px">
+	<td align="center" colspan="2"><button class="button" id="st">Start</button> </td>
+	</tr>
+	
+	</table>
+</div>	
+	<div class="cscon" align="center">
+	 <ul style="list-style-type:none">
+	 <li class="con" style="color:#CCCCCC">ReacH Me</li>
+	 <br />
+	 <li><a title="Harsha Mbh" href="https://www.facebook.com/harsha.mbh"><img src="fbimage.jpg" height="40px" width="40px"/></a></li>
+	 <br />
+	 <li><a title="@HarshaCh23" href="https://twitter.com/HarshaCh23"><img src="twitterimg.png" height="40px" width="40px"/></a></li>
+	 <br />
+	 <li><a title="harshambh.hv@gmail.com"><img src="gmailimg.png" height="40px" width="40px"/></a></li>  
+	 </ul>
+	 </div>
+	 
+	 <div id = "dialog-4" title = "Greetings...!!!" style="color:#993300" >
+<div id = "progressbar-5">
+<div class = "progress-label">
+            DownLoading scripts...@MysteryX
+         </div>
+	</div>
+	<h2><p  style="color:#0033FF" id="nx"></p></h2>
+	<h2 align="center"><p style="color:#0033FF font:Verdana, Arial, Helvetica, sans-serif " id="ny"></p></h2>
+	<h2 align="right"><p style="color:#0033FF" id="nz"></p></h2>
+	<button id="opener-5" style="background-color:#CC0066">Check Out</button>
+	
+</div>
+<div id="dialog-5" title="Warning..!!!!!" style="background-color:#CC0000">
+<h1 style="font-size:90px" ><p class="tab blink" style="color:#FFFFFF" >tHe gaMe is on</p></h1>
+</div>
+	 
+    
+<noscript>
+Enable JavaScript
+</noscript>
+</body>
+</html>
