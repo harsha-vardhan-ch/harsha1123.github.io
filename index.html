@@ -70,18 +70,16 @@ min-width:50%;
   background-color: #4CAF50;
   color: white;
   }
-         .ui-widget-header,.ui-state-default, ui-button {
+         .ui-widget-header,ui-button {
             background: #009900;
             border: 1px solid #DDDDDD;
-            color: #333333;
-			
+            color: #333333;			
             font-weight: bold;
          }
 	#myProgress {
   width: 100%;
   background-color: #ddd;
 }
-
 #myBar {
   width: 0%;
   height: 50px;
@@ -202,7 +200,6 @@ min-width:50%;
                },
             });
             $("#st").click(function() {
-			window.alert("Check out only after loading");
                $( "#dialog-4" ).dialog( "open" );
             });
          });
@@ -224,14 +221,6 @@ min-width:50%;
                $( "#dialog-5" ).dialog( "open" );
             });
          });
-		 document.getElementById("opener-5").addEventListener('click', function(){
-  if("vibrate" in navigator){
-    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-if (navigator.vibrate) {
-      navigator.vibrate([5000]);    
-}    
-}
-});
 </script>
 </head>
 
@@ -289,7 +278,7 @@ if (navigator.vibrate) {
 	 
 	 <div id = "dialog-4" title = "Greetings...!!!" style="color:#993300" >
 <div id = "myProgress">
-<div class = "myBar">
+<div id = "myBar">
          </div>
 	</div>
 	<h2><p  style="color:#0033FF" id="nx"></p></h2>
