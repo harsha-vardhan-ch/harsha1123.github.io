@@ -77,14 +77,20 @@ min-width:50%;
 			
             font-weight: bold;
          }
-		 .progress-label {
-            position: absolute;
-            left: 10%;
-            top: 13px;
-            font-weight: bold;
-            text-shadow: 1px 1px 0 #fff;
-         }
-		 
+	#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 0%;
+  height: 50px;
+  background-color: #009900;
+  text-align: center;
+  font-size: 15px;
+  color: #333333;
+  font-weight:bold;
+}
 		 .blink {
 	-webkit-animation: blink .75s linear infinite;
 	-moz-animation: blink .75s linear infinite;
@@ -149,42 +155,40 @@ min-width:50%;
 		document.getElementById('nam').innerHTML = 
                     document.getElementById("input").value;
     }
-	$(function() {
-            var progressbar = $( "#progressbar-5" );
-            progressLabel = $( ".progress-label" );
-            $( "#progressbar-5" ).progressbar({
-               value: false,
-               change: function() {
-                  progressLabel.text( 
-                     progressbar.progressbar( "value" )  + "% "+"..."+"@MysteryX" );
-               },
-               complete: function() {
-                  progressLabel.text( "Loading Completed!" );
-               }
-            });
-            function progress() {
-			var d1=document.getElementById("nx");
-			var d2=document.getElementById("ny");
-			var d3=document.getElementById("nz");
-			var val = progressbar.progressbar( "value" ) || 0;
-               progressbar.progressbar( "value", val + 1 );
-			   if(val==99)
-			   {
-			   d3.innerHTML="Y E @ R";
-			   }
-			   if(val==30)
-			   {
-			   d1.innerHTML="!-! @ P P Y";
-			   }if(val==65)
-			   {
-			   d2.innerHTML="N E W";
-			   }			   
-               if ( val < 99 ) {
-                  setTimeout( progress, 100 );
-               }			   
-            }
-            setTimeout( progress, 3000 );
-         });		 
+	function move() {
+	var d1=document.getElementById("nx");
+	var d2=document.getElementById("ny");
+	var d3=document.getElementById("nz");
+  var elem = document.getElementById("myBar");   
+  var width = 0;
+  var id = setInterval(frame, 100);
+  function frame() {
+  	if(width==99)
+	{
+	 d3.innerHTML="Y E @ R";
+	 }
+	  if(width==30)
+	  {
+	  d1.innerHTML="!-! @ P P Y";
+	  }
+	  if(width==10)
+	  {
+	  window.alert("check out after loading");
+	  }
+	  if(width==65)
+	  {
+	  d2.innerHTML="N E W";
+	  }			
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = 'Loading Scripts '+ width * 1  + '%' + '..@MysteryX';
+    }
+  }
+} 
+	
 		 $(function() {
             $( "#dialog-4" ).dialog({
 				width:500,
@@ -266,7 +270,7 @@ if (navigator.vibrate) {
 	</tr>
 	
 	<tr height="25px">
-	<td align="center" colspan="2"><button class="button" id="st">Start</button> </td>
+	<td align="center" colspan="2"><button class="button" id="st" onclick="move()">Start</button> </td>
 	</tr>
 	
 	</table>
@@ -284,9 +288,8 @@ if (navigator.vibrate) {
 	 </div>
 	 
 	 <div id = "dialog-4" title = "Greetings...!!!" style="color:#993300" >
-<div id = "progressbar-5">
-<div class = "progress-label">
-            DownLoading scripts...@MysteryX
+<div id = "myProgress">
+<div class = "myBar">
          </div>
 	</div>
 	<h2><p  style="color:#0033FF" id="nx"></p></h2>
